@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Savior Spring Water — Business Proposal</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #b8dcf0;
+    --deep: #1a4a6b;
+    --mid: #3a7ea8;
+    --pale: #e8f4fc;
+    --white: #ffffff;
+    --off: #f5fafd;
+    --ink: #0d1f2d;
+    --muted: #5a7a8a;
+    --gold: #c9a84c;
+    --success: #2d8a5e;
+    --warn: #d97706;
+    --danger: #b91c1c;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f8fafb;
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ─── COVER ─── */
+  .cover {
+    background: var(--deep);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    border: 1px solid rgba(184,220,240,0.1);
+    pointer-events: none;
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    border: 1px solid rgba(184,220,240,0.06);
+    pointer-events: none;
+  }
+
+  .cover-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--sky);
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-main {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(184,220,240,0.7);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .cover-eyebrow::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: rgba(184,220,240,0.4);
+  }
+
+  .cover h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .cover h1 em { font-style: italic; color: var(--sky); }
+
+  .cover-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    margin-top: 1.2rem;
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  .cover-meta {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .cover-meta-item label {
+    display: block;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+  }
+
+  .cover-meta-item span {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.75);
+    font-weight: 300;
+  }
+
+  /* ─── LAYOUT ─── */
+  .doc {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+  }
+
+  /* ─── CHAPTER HEADER ─── */
+  .chapter {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(184,220,240,0.4);
+  }
+
+  .chapter-num {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .chapter-num::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--mid);
+  }
+
+  h2.chapter-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: var(--deep);
+    line-height: 1.1;
+  }
+
+  h2.chapter-title em { font-style: italic; color: var(--mid); }
+
+  /* ─── SECTION HEADER ─── */
+  h3.section-head {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--deep);
+    margin: 2.5rem 0 0.8rem;
+  }
+
+  h4 {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--deep);
+    margin: 1.5rem 0 0.5rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--mid);
+  }
+
+  p { color: var(--muted); font-weight: 300; margin-bottom: 0.9rem; }
+
+  /* ─── CARDS ─── */
+  .card-grid {
+    display: grid;
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+  }
+
+  .card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+  .card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .card-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+  .card {
+    background: var(--white);
+    border: 1px solid rgba(184,220,240,0.5);
+    border-radius: 16px;
+    padding: 1.5rem;
+  }
+
+  .card-accent {
+    background: var(--pale);
+    border-color: var(--sky);
+  }
+
+  .card-dark {
+    background: var(--deep);
+    border-color: var(--deep);
+  }
+
+  .card-warn {
+    background: #fffbf0;
+    border-color: #fcd34d;
+  }
+
+  .card-danger {
+    background: #fff5f5;
+    border-color: #fca5a5;
+  }
+
+  .card-success {
+    background: #f0fdf7;
+    border-color: #6ee7b7;
+  }
+
+  .card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--deep);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .card-dark .card-num { color: var(--white); }
+
+  .card-label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+
+  .card-dark .card-label { color: rgba(255,255,255,0.6); }
+
+  .card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .card-title {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--deep);
+    margin-bottom: 0.4rem;
+  }
+
+  .card-dark .card-title { color: var(--white); }
+
+  .card-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .card-dark .card-desc { color: rgba(255,255,255,0.6); }
+
+  /* ─── TABLE ─── */
+  .table-wrap {
+    margin: 1.5rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(184,220,240,0.4);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+  }
+
+  th {
+    background: var(--pale);
+    padding: 0.75rem 1rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    font-weight: 500;
+    text-align: left;
+  }
+
+  td {
+    padding: 0.8rem 1rem;
+    font-size: 0.88rem;
+    color: var(--muted);
+    font-weight: 300;
+    border-top: 1px solid rgba(184,220,240,0.3);
+    vertical-align: top;
+  }
+
+  tr:hover td { background: var(--off); }
+
+  td strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* ─── BADGES ─── */
+  .badge {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  .badge-blue { background: var(--pale); color: var(--mid); }
+  .badge-green { background: #dcfce7; color: #166534; }
+  .badge-gold { background: #fef9c3; color: #854d0e; }
+  .badge-red { background: #fee2e2; color: #991b1b; }
+
+  /* ─── CHECKLIST ─── */
+  .checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0.8rem 0 1.2rem;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .checklist li::before {
+    content: '→';
+    color: var(--mid);
+    font-size: 0.85rem;
+    margin-top: 0.1em;
+    flex-shrink: 0;
+    font-weight: 400;
+  }
+
+  /* ─── HIGHLIGHT BOX ─── */
+  .highlight {
+    background: var(--pale);
+    border-left: 3px solid var(--mid);
+    border-radius: 0 12px 12px 0;
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .highlight p { margin: 0; color: var(--deep); font-weight: 400; }
+
+  .highlight-gold {
+    background: #fffbf0;
+    border-left-color: var(--gold);
+  }
+
+  .highlight-danger {
+    background: #fff5f5;
+    border-left-color: var(--danger);
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    height: 1px;
+    background: rgba(184,220,240,0.35);
+    margin: 2.5rem 0;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 700px) {
+    .card-grid.cols-2,
+    .card-grid.cols-3,
+    .card-grid.cols-4 { grid-template-columns: 1fr; }
+    .cover { padding: 2rem; }
+    .cover h1 { font-size: 2.8rem; }
+    .doc { padding: 0 1rem 4rem; }
+  }
+
+  @media print {
+    .cover { page-break-after: always; }
+    .chapter { page-break-before: always; }
+    body { background: white; }
+  }
+
+  /* ─── PHASE TIMELINE ─── */
+  .phase-timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin: 2rem 0;
+    position: relative;
+  }
+
+  .phase-timeline::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 16.6%;
+    right: 16.6%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--sky), var(--mid));
+  }
+
+  .phase {
+    padding: 0 1rem;
+    padding-top: 0;
+  }
+
+  .phase-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--mid);
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .phase:nth-child(2) .phase-dot {
+    background: var(--mid);
+    color: var(--white);
+  }
+
+  .phase:nth-child(3) .phase-dot {
+    background: var(--deep);
+    color: var(--white);
+    border-color: var(--deep);
+  }
+
+  .phase-time {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  .phase-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--deep);
+    margin-bottom: 0.5rem;
+  }
+
+  .phase-items {
+    list-style: none;
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .phase-items li::before {
+    content: '· ';
+    color: var(--sky);
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--pale);
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    margin: 3rem 0;
+  }
+
+  .toc h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--deep);
+    margin-bottom: 1.2rem;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 3rem;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .toc-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--sky);
+    min-width: 20px;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <div class="cover-logo">
+    <svg width="24" height="30" viewBox="0 0 24 30" fill="none">
+      <path d="M12 1C12 1 3 12 3 19C3 24.0228 7.02944 28 12 28C16.9706 28 21 24.0228 21 19C21 12 12 1 12 1Z" fill="#b8dcf0" fill-opacity="0.8" stroke="#7bbdd8" stroke-width="1"/>
+      <ellipse cx="9" cy="17" rx="2.5" ry="3.5" fill="white" fill-opacity="0.3" transform="rotate(-20 9 17)"/>
+    </svg>
+    Savior Spring Water
+  </div>
+
+  <div class="cover-main">
+    <div class="cover-eyebrow">Business Proposal</div>
+    <h1>Building a <em>Water</em><br>Empire<br>in the DMV</h1>
+    <p class="cover-subtitle">A complete business plan, marketing strategy, CRM infrastructure, and growth roadmap — structured as a working proposal for the founders of Savior Spring Water.</p>
+  </div>
+
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <label>Prepared For</label>
+      <span>Savior Spring Water — Founders</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Prepared By</label>
+      <span>Strategic Growth Partner</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Date</label>
+      <span>April 2026</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Focus Area</label>
+      <span>DMV Metro Region</span>
+    </div>
+  </div>
+</div>
+
+<div class="doc">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc" style="margin-top:4rem;">
+    <h3>What's Inside This Proposal</h3>
+    <div class="toc-grid">
+      <div class="toc-item"><span class="toc-num">01</span> Executive Summary</div>
+      <div class="toc-item"><span class="toc-num">05</span> Marketing Plan</div>
+      <div class="toc-item"><span class="toc-num">02</span> Business Structure</div>
+      <div class="toc-item"><span class="toc-num">06</span> CRM & Email Strategy</div>
+      <div class="toc-item"><span class="toc-num">03</span> Market Opportunity</div>
+      <div class="toc-item"><span class="toc-num">07</span> Growth Roadmap</div>
+      <div class="toc-item"><span class="toc-num">04</span> Revenue Model</div>
+      <div class="toc-item"><span class="toc-num">08</span> Partnership Proposal</div>
+    </div>
+  </div>
+
+  <!-- ── 01 EXECUTIVE SUMMARY ── -->
+  <div class="chapter">
+    <div class="chapter-num">01</div>
+    <h2 class="chapter-title">Executive <em>Summary</em></h2>
+  </div>
+
+  <p>Savior Spring Water is a grassroots, founder-led spring water subscription service operating in the DC-Maryland-Virginia (DMV) corridor. Two founders currently source, bottle, and deliver five-gallon jugs of natural spring water directly to customers' doors. The business operates on a subscription model with a compelling incentive: order three or more jugs and receive a free water dispenser.</p>
+
+  <p>Despite genuine product quality, loyal customers, and documented testimonials, the business lacks the digital infrastructure — a dedicated website, branded social media, email list, and CRM — needed to scale beyond word-of-mouth. This proposal outlines how to build that infrastructure rapidly, establish a brand identity worthy of the product, and structure sustainable growth in one of America's most densely populated and health-conscious metro areas.</p>
+
+  <div class="card-grid cols-4">
+    <div class="card card-accent">
+      <div class="card-num">5 gal</div>
+      <div class="card-label">Per jug delivery, bottled at source</div>
+    </div>
+    <div class="card card-accent">
+      <div class="card-num">Free</div>
+      <div class="card-label">Dispenser with 3+ jug orders</div>
+    </div>
+    <div class="card card-accent">
+      <div class="card-num">DMV</div>
+      <div class="card-label">Active delivery territory</div>
+    </div>
+    <div class="card card-accent">
+      <div class="card-num">$0</div>
+      <div class="card-label">Dedicated digital presence (yet)</div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>The core thesis:</strong> Savior Spring Water has a real product, real customers, and a compelling story. What it lacks is infrastructure. With the right digital foundation — website, social media, CRM, and a defined growth strategy — this business can grow from a personal hustle into a recognized DMV brand within 12 months.</p>
+  </div>
+
+  <!-- ── 02 BUSINESS STRUCTURE ── -->
+  <div class="chapter">
+    <div class="chapter-num">02</div>
+    <h2 class="chapter-title">Business <em>Structure</em></h2>
+  </div>
+
+  <h3 class="section-head">Current State</h3>
+  <p>The business currently operates informally — sourcing is done by the two founders, delivery is personal, and all marketing occurs through their personal Instagram accounts. There is no business entity, no dedicated banking, and no systems for managing customers, orders, or recurring revenue.</p>
+
+  <div class="card-grid cols-2">
+    <div class="card card-warn">
+      <div class="card-icon">⚠️</div>
+      <div class="card-title">Liability Exposure</div>
+      <p class="card-desc">Operating as individuals (not an LLC) means personal assets are exposed to any business liability. This needs to change immediately.</p>
+    </div>
+    <div class="card card-warn">
+      <div class="card-icon">⚠️</div>
+      <div class="card-title">No Business Banking</div>
+      <p class="card-desc">Mixing personal and business finances makes tax filing difficult and prevents access to business credit lines or loans later.</p>
+    </div>
+  </div>
+
+  <h3 class="section-head">Recommended Legal & Operational Setup</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Action Item</th>
+          <th>Recommended Step</th>
+          <th>Priority</th>
+          <th>Cost Est.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Legal Entity</strong></td>
+          <td>Form an LLC in Maryland or Virginia (lower fees). File Articles of Organization.</td>
+          <td><span class="badge badge-red">Immediate</span></td>
+          <td>~$100</td>
+        </tr>
+        <tr>
+          <td><strong>EIN</strong></td>
+          <td>Obtain Employer Identification Number from IRS (free, 10 min online).</td>
+          <td><span class="badge badge-red">Immediate</span></td>
+          <td>Free</td>
+        </tr>
+        <tr>
+          <td><strong>Business Banking</strong></td>
+          <td>Open dedicated business checking account (Relay or Mercury recommended for startups).</td>
+          <td><span class="badge badge-red">Immediate</span></td>
+          <td>Free</td>
+        </tr>
+        <tr>
+          <td><strong>Water Source Licensing</strong></td>
+          <td>Verify local/state regulations for commercial spring water bottling and distribution.</td>
+          <td><span class="badge badge-red">Immediate</span></td>
+          <td>Varies</td>
+        </tr>
+        <tr>
+          <td><strong>Business Insurance</strong></td>
+          <td>General liability + product liability insurance. Essential for food/beverage businesses.</td>
+          <td><span class="badge badge-gold">30 Days</span></td>
+          <td>$50–100/mo</td>
+        </tr>
+        <tr>
+          <td><strong>Subscription Software</strong></td>
+          <td>Use Stripe Billing or Subbly to manage recurring subscriptions and auto-charge.</td>
+          <td><span class="badge badge-gold">30 Days</span></td>
+          <td>~$30/mo</td>
+        </tr>
+        <tr>
+          <td><strong>Route Planning</strong></td>
+          <td>Use OptimoRoute or Route4Me to plan efficient delivery routes and reduce fuel costs.</td>
+          <td><span class="badge badge-blue">60 Days</span></td>
+          <td>$40/mo</td>
+        </tr>
+        <tr>
+          <td><strong>Accounting</strong></td>
+          <td>Wave Accounting (free) or QuickBooks Simple Start to track revenue, expenses, and taxes.</td>
+          <td><span class="badge badge-blue">60 Days</span></td>
+          <td>Free–$30/mo</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-head">Roles & Responsibilities (Founder Split)</h3>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <div class="card-title">Founder A — Operations Lead</div>
+      <ul class="checklist">
+        <li>Spring sourcing & quality control</li>
+        <li>Bottling oversight & jug management</li>
+        <li>Delivery route execution</li>
+        <li>Logistics & inventory</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Founder B — Growth Lead</div>
+      <ul class="checklist">
+        <li>Customer relationships & retention</li>
+        <li>Sales outreach & new accounts</li>
+        <li>Promotion and community events</li>
+        <li>Partner coordination</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── 03 MARKET OPPORTUNITY ── -->
+  <div class="chapter">
+    <div class="chapter-num">03</div>
+    <h2 class="chapter-title">Market <em>Opportunity</em></h2>
+  </div>
+
+  <p>The DC-Maryland-Virginia metro area is one of the most affluent, health-conscious, and densely populated regions in the United States — a perfect market for premium spring water delivery.</p>
+
+  <div class="card-grid cols-3">
+    <div class="card card-accent">
+      <div class="card-num">6.4M</div>
+      <div class="card-label">DMV metro population</div>
+    </div>
+    <div class="card card-accent">
+      <div class="card-num">#3</div>
+      <div class="card-label">US metro by household income</div>
+    </div>
+    <div class="card card-accent">
+      <div class="card-num">+12%</div>
+      <div class="card-label">Annual premium water market growth</div>
+    </div>
+  </div>
+
+  <h3 class="section-head">Target Customer Profiles</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Persona</th>
+          <th>Profile</th>
+          <th>Pain Point</th>
+          <th>Why Savior Wins</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Health-Conscious Household</strong></td>
+          <td>Families in MD/VA suburbs, HHI $80k+, 2–4 members</td>
+          <td>Tap water quality concerns; tired of plastic bottles</td>
+          <td>Pure, local, subscription — no more buying cases</td>
+        </tr>
+        <tr>
+          <td><strong>Wellness-Focused Professional</strong></td>
+          <td>25–45, urban DC, solo or couple, health-forward lifestyle</td>
+          <td>Convenience; wants "clean" everything in their home</td>
+          <td>Premium story, local brand, easy delivery</td>
+        </tr>
+        <tr>
+          <td><strong>Small Office / Remote Team</strong></td>
+          <td>Boutique offices, co-working spaces, remote workers with home offices</td>
+          <td>Office water cooler is expensive and generic</td>
+          <td>Local, fresh, story to tell — better than Poland Spring</td>
+        </tr>
+        <tr>
+          <td><strong>Faith & Community Orgs</strong></td>
+          <td>Churches, mosques, community centers in DMV</td>
+          <td>Events need consistent, affordable water supply</td>
+          <td>Bulk pricing, local trust, community connection</td>
+        </tr>
+        <tr>
+          <td><strong>Fitness & Wellness Studios</strong></td>
+          <td>CrossFit gyms, yoga studios, MMA/boxing clubs</td>
+          <td>Members notice water quality; branded experience</td>
+          <td>Prestige angle: "We serve spring water" as a brand differentiator</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-head">Competitive Landscape</h3>
+  <p>The DMV spring water delivery market is dominated by corporate players with no local story. Savior's differentiator is authenticity, community connection, and the human element of knowing exactly who sources your water.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Competitor</th>
+          <th>Model</th>
+          <th>Weakness</th>
+          <th>Savior's Edge</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Culligan / Primo</strong></td>
+          <td>Corporate delivery, franchised</td>
+          <td>No local story, generic, expensive</td>
+          <td>Local founders, spring-sourced, personal relationship</td>
+        </tr>
+        <tr>
+          <td><strong>Poland Spring / Deer Park</strong></td>
+          <td>Retail, big box</td>
+          <td>Plastic waste, no delivery, corporate</td>
+          <td>Subscription convenience, eco-friendly jugs, local</td>
+        </tr>
+        <tr>
+          <td><strong>Costco Water Delivery</strong></td>
+          <td>Volume delivery</td>
+          <td>No premium story, no relationship</td>
+          <td>Community trust, founder-to-customer relationship</td>
+        </tr>
+        <tr>
+          <td><strong>Other Local Ops</strong></td>
+          <td>Small, informal</td>
+          <td>No digital presence, no brand</td>
+          <td>First to build a real brand = category ownership</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── 04 REVENUE MODEL ── -->
+  <div class="chapter">
+    <div class="chapter-num">04</div>
+    <h2 class="chapter-title">Revenue <em>Model</em></h2>
+  </div>
+
+  <h3 class="section-head">Subscription Pricing Structure</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Plan</th>
+          <th>Jugs / Delivery</th>
+          <th>Price / Delivery</th>
+          <th>Monthly (Bi-weekly)</th>
+          <th>Annual Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Starter</strong></td>
+          <td>1 × 5-gallon</td>
+          <td>$18</td>
+          <td>$36</td>
+          <td>$432</td>
+        </tr>
+        <tr>
+          <td><strong>Popular</strong></td>
+          <td>2 × 5-gallon</td>
+          <td>$32</td>
+          <td>$64</td>
+          <td>$768</td>
+        </tr>
+        <tr>
+          <td><strong>Best Value</strong></td>
+          <td>3+ × 5-gallon</td>
+          <td>$44</td>
+          <td>$88</td>
+          <td>$1,056</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-head">Revenue Projections</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Milestone</th>
+          <th>Subscribers</th>
+          <th>Avg Monthly Revenue</th>
+          <th>Annual Revenue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Now (estimated)</strong></td>
+          <td>~15–25 active</td>
+          <td>~$1,000</td>
+          <td>~$12,000</td>
+        </tr>
+        <tr>
+          <td><strong>Month 3 (with digital)</strong></td>
+          <td>50 subscribers</td>
+          <td>$3,000–$3,500</td>
+          <td>~$40,000</td>
+        </tr>
+        <tr>
+          <td><strong>Month 6</strong></td>
+          <td>100 subscribers</td>
+          <td>$6,000–$7,500</td>
+          <td>~$80,000</td>
+        </tr>
+        <tr>
+          <td><strong>Month 12</strong></td>
+          <td>200 subscribers</td>
+          <td>$12,000–$16,000</td>
+          <td>~$165,000</td>
+        </tr>
+        <tr>
+          <td><strong>Year 2 (scaled)</strong></td>
+          <td>500 subscribers</td>
+          <td>$30,000+</td>
+          <td>$360,000+</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="highlight">
+    <p><strong>Key insight:</strong> 200 subscribers at the "Best Value" plan alone generates $211,200/year. The path to six-figure revenue is achievable within 12 months with proper digital infrastructure and consistent marketing.</p>
+  </div>
+
+  <h3 class="section-head">Additional Revenue Streams</h3>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <div class="card-title">B2B Accounts (Offices, Studios, Churches)</div>
+      <p class="card-desc">Commercial clients typically order 6–12 jugs per delivery. A single gym or office can represent $80–200/month. 10 commercial accounts = $1,000–$2,000/month added revenue.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Dispenser Sales & Accessories</div>
+      <p class="card-desc">Sell dispensers to non-subscribers, branded bottles, water flavor enhancers (mineral drops, electrolytes), and seasonal bundles. Low-lift revenue with existing customer base.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Gifting & Corporate Orders</div>
+      <p class="card-desc">Gift a spring water subscription. Seasonal boxes. Corporate holiday orders. High margin, low friction for existing infrastructure.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Events & Pop-Ups</div>
+      <p class="card-desc">Serve at local markets, health expos, community events. Free brand exposure plus direct sales. First sip is the best marketing tool you have.</p>
+    </div>
+  </div>
+
+  <!-- ── 05 MARKETING PLAN ── -->
+  <div class="chapter">
+    <div class="chapter-num">05</div>
+    <h2 class="chapter-title">Marketing <em>Plan</em></h2>
+  </div>
+
+  <h3 class="section-head">Brand Identity Pillars</h3>
+  <p>Savior Spring Water's brand should live at the intersection of purity, community, and authenticity. The founders are the story. The water is the product. The DMV is the place.</p>
+
+  <div class="card-grid cols-3">
+    <div class="card card-dark">
+      <div class="card-icon">💧</div>
+      <div class="card-title">Pure</div>
+      <p class="card-desc">Natural. Unprocessed. Sourced by hand from a real spring. Zero compromise on what goes in the jug.</p>
+    </div>
+    <div class="card card-dark">
+      <div class="card-icon">🏙️</div>
+      <div class="card-title">Local</div>
+      <p class="card-desc">DMV built, DMV served. The founders are your neighbors. You know exactly where your water comes from.</p>
+    </div>
+    <div class="card card-dark">
+      <div class="card-icon">🤝</div>
+      <div class="card-title">Human</div>
+      <p class="card-desc">Two guys who care. A business with a face. Not a corporation — a community. Your water has a story.</p>
+    </div>
+  </div>
+
+  <h3 class="section-head">Dedicated Instagram Strategy</h3>
+
+  <div class="highlight-gold">
+    <p><strong>Priority #1:</strong> Create @saviorspringwater on Instagram TODAY. Separate business from personal. Every day you post from a personal page is brand equity lost.</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Content Pillar</th>
+          <th>Type</th>
+          <th>Frequency</th>
+          <th>Goal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>The Source</strong></td>
+          <td>Reels of the spring, bottling process, "behind the scenes" water sourcing</td>
+          <td>2× / week</td>
+          <td>Trust & differentiation</td>
+        </tr>
+        <tr>
+          <td><strong>Customer Moments</strong></td>
+          <td>Reposts, testimonials, "first jug" reactions, family moments with water</td>
+          <td>3× / week</td>
+          <td>Social proof & relatability</td>
+        </tr>
+        <tr>
+          <td><strong>Education</strong></td>
+          <td>"Why spring water vs tap water", mineral content, hydration science</td>
+          <td>1× / week</td>
+          <td>Authority & awareness</td>
+        </tr>
+        <tr>
+          <td><strong>Promotion</strong></td>
+          <td>Subscription deals, free dispenser offer, referral bonus, limited promos</td>
+          <td>1× / week</td>
+          <td>Conversions</td>
+        </tr>
+        <tr>
+          <td><strong>Community</strong></td>
+          <td>DMV events, local partnerships, collaborations with health/fitness brands</td>
+          <td>1× / week</td>
+          <td>Brand love & growth</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-head">Content Ideas (Ready to Execute)</h3>
+  <ul class="checklist">
+    <li>"Day in the life" sourcing Reel — follow the founders from spring to your door in 60 seconds</li>
+    <li>"Taste test" — film subscribers reacting to the water for the first time blind vs tap water</li>
+    <li>"What's in your water?" — educational carousel comparing tap water ingredients vs spring water</li>
+    <li>Customer testimonial series — film existing happy customers for 30-second UGC clips</li>
+    <li>"Dispenser install" — quick Reel showing how easy it is to set up the free dispenser</li>
+    <li>Monthly "Spring Report" — where did this month's batch come from? Builds trust and mystique</li>
+    <li>Community tie-in — donate jugs to a local event or charity and document it authentically</li>
+  </ul>
+
+  <h3 class="section-head">Paid Advertising (Phase 2)</h3>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <div class="card-title">Meta (Facebook/Instagram) Ads</div>
+      <p class="card-desc">Target: Women 28–50 in DC/MD/VA zip codes, interests: wellness, organic food, health. Budget: $300–500/mo. Goal: website signups and first orders. Best ROI in Phase 2 after organic content is established.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Google Local Ads</div>
+      <p class="card-desc">Target: "spring water delivery DMV", "water delivery DC", "5 gallon water delivery Maryland." Budget: $200/mo. High intent — these people are actively searching for exactly what you offer.</p>
+    </div>
+  </div>
+
+  <h3 class="section-head">Referral & Word-of-Mouth Program</h3>
+  <p>Your current growth comes entirely from referrals — which is powerful. Formalize it:</p>
+  <ul class="checklist">
+    <li><strong>Refer 1 friend = $10 credit</strong> on your next delivery. The referred friend gets $5 off their first order.</li>
+    <li>Track referrals through a unique link in your CRM (Klaviyo, Mailchimp, or a dedicated referral app like ReferralHero).</li>
+    <li>Share referral codes via text, email, and Instagram DM.</li>
+    <li>Feature top referrers publicly ("Our most generous water spreader this month is...").</li>
+  </ul>
+
+  <!-- ── 06 CRM & EMAIL ── -->
+  <div class="chapter">
+    <div class="chapter-num">06</div>
+    <h2 class="chapter-title">CRM & Email <em>Strategy</em></h2>
+  </div>
+
+  <p>Every person who visits your website, orders water, or follows your Instagram is a potential lifelong subscriber. A CRM (Customer Relationship Management system) is how you turn visitors into customers and customers into advocates. This is the single highest-ROI investment you can make right now.</p>
+
+  <h3 class="section-head">Recommended CRM Stack (Budget-Friendly)</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>Function</th>
+          <th>Cost</th>
+          <th>Why It</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Klaviyo</strong></td>
+          <td>Email marketing + SMS + CRM. Captures website signups, segments lists, sends automated flows.</td>
+          <td>Free up to 500 contacts</td>
+          <td>Built for subscription businesses. Best-in-class automation.</td>
+        </tr>
+        <tr>
+          <td><strong>Stripe</strong></td>
+          <td>Payment processing + subscription billing. Auto-charge recurring customers.</td>
+          <td>2.9% + $0.30 per transaction</td>
+          <td>Industry standard. Easy setup. Links to Klaviyo natively.</td>
+        </tr>
+        <tr>
+          <td><strong>Google Sheets (transitional)</strong></td>
+          <td>Simple customer database until CRM is fully set up. Track name, email, phone, address, plan, next delivery.</td>
+          <td>Free</td>
+          <td>Low barrier. Start today. Migrate to Klaviyo within 30 days.</td>
+        </tr>
+        <tr>
+          <td><strong>Squarespace or Shopify</strong></td>
+          <td>Website platform with built-in email capture, subscription management, and payment.</td>
+          <td>$29–$79/mo</td>
+          <td>All-in-one. Links to Klaviyo. Mobile-optimized.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-head">Email Automation Flows (Set Once, Earn Forever)</h3>
+
+  <div class="card-grid cols-2">
+    <div class="card">
+      <div class="card-title">1. Welcome Series (5 emails over 7 days)</div>
+      <ul class="checklist">
+        <li>Day 0: "Welcome to the family — here's your discount"</li>
+        <li>Day 1: "Where your water comes from" (source story)</li>
+        <li>Day 3: "How to set up your dispenser"</li>
+        <li>Day 5: "5 reasons spring water changes everything"</li>
+        <li>Day 7: "Refer a friend, earn $10 credit"</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">2. Win-Back Flow (for inactive subscribers)</div>
+      <ul class="checklist">
+        <li>30 days inactive: "We miss you — here's 10% off"</li>
+        <li>45 days inactive: "Is everything okay with your delivery?"</li>
+        <li>60 days inactive: "Last chance — pause or cancel easily"</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">3. Post-Purchase Flow</div>
+      <ul class="checklist">
+        <li>Immediately after order: confirmation + dispenser setup guide</li>
+        <li>3 days after delivery: "How's the water? Leave us a Google review"</li>
+        <li>Upsell: "Ready to upgrade to 3 jugs and get a free dispenser?"</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">4. Monthly Newsletter</div>
+      <ul class="checklist">
+        <li>"This Month at the Spring" — source update</li>
+        <li>Subscriber spotlight / testimonial feature</li>
+        <li>Seasonal promotions and delivery schedule updates</li>
+        <li>Health tips, hydration content</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="section-head">Lead Capture: Website + Popup Strategy</h3>
+  <p>The website included in this proposal features two built-in CRM capture points:</p>
+  <ul class="checklist">
+    <li><strong>Auto-popup after 4 seconds:</strong> Captures name, email, and phone in exchange for "first drop perks" — subscriber discounts, early access to delivery windows, and new product announcements.</li>
+    <li><strong>Dedicated email signup section:</strong> Mid-page and footer signup forms that feed directly into your email list.</li>
+    <li><strong>Instagram bio link:</strong> Direct all Instagram traffic to the website, where the popup and signup form capture leads.</li>
+  </ul>
+
+  <!-- ── 07 GROWTH ROADMAP ── -->
+  <div class="chapter">
+    <div class="chapter-num">07</div>
+    <h2 class="chapter-title">Growth <em>Roadmap</em></h2>
+  </div>
+
+  <div class="phase-timeline">
+    <div class="phase">
+      <div class="phase-dot">1</div>
+      <div class="phase-time">Month 1–2</div>
+      <div class="phase-name">Foundation</div>
+      <ul class="phase-items">
+        <li>Form LLC + open business bank</li>
+        <li>Launch dedicated website</li>
+        <li>Create @saviorspringwater IG</li>
+        <li>Set up Klaviyo + Stripe</li>
+        <li>Migrate existing customers to CRM</li>
+        <li>Begin content posting schedule</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-dot">2</div>
+      <div class="phase-time">Month 3–6</div>
+      <div class="phase-name">Growth</div>
+      <ul class="phase-items">
+        <li>Launch referral program</li>
+        <li>Target 5 B2B accounts (gyms/offices)</li>
+        <li>Start Meta ads ($300/mo)</li>
+        <li>Attend 2 local health events</li>
+        <li>Reach 100 subscribers</li>
+        <li>Film 10 customer testimonials</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-dot">3</div>
+      <div class="phase-time">Month 7–12</div>
+      <div class="phase-name">Scale</div>
+      <ul class="phase-items">
+        <li>Hire 1 part-time delivery driver</li>
+        <li>Expand delivery radius</li>
+        <li>Launch Google Ads</li>
+        <li>Add accessory product line</li>
+        <li>Target 200+ subscribers</li>
+        <li>Explore wholesale / retail</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── 08 PARTNERSHIP PROPOSAL ── -->
+  <div class="chapter">
+    <div class="chapter-num">08</div>
+    <h2 class="chapter-title">Partnership <em>Proposal</em></h2>
+  </div>
+
+  <p>I'm not just here to hand you a plan and walk away. I want to build this with you. Here's what I'm proposing — a structured working partnership where I contribute real, ongoing value in exchange for fair compensation.</p>
+
+  <h3 class="section-head">What I Bring to the Table</h3>
+
+  <div class="card-grid cols-3">
+    <div class="card card-accent">
+      <div class="card-icon">📱</div>
+      <div class="card-title">Social Media Management</div>
+      <p class="card-desc">Full management of @saviorspringwater Instagram. Content creation, Reels editing, caption writing, hashtag strategy, community management, story posting, and analytics reporting. Consistent, on-brand posting 5–7 days per week.</p>
+    </div>
+    <div class="card card-accent">
+      <div class="card-icon">🌐</div>
+      <div class="card-title">Website & Digital Infrastructure</div>
+      <p class="card-desc">Build and maintain the website (delivered in this proposal). Set up and manage Klaviyo email flows, lead capture popups, CRM database, and monthly email newsletters to subscribers.</p>
+    </div>
+    <div class="card card-accent">
+      <div class="card-icon">🚚</div>
+      <div class="card-title">Physical Operations Support</div>
+      <p class="card-desc">Available to join sourcing runs, assist with delivery days, represent the brand at pop-ups and events, and handle boots-on-the-ground promotional activities in the DMV.</p>
+    </div>
+  </div>
+
+  <h3 class="section-head">Proposed Compensation Structures</h3>
+  <p>I'm flexible — let's find what works for the business and for both parties. Here are three models to consider:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Structure</th>
+          <th>Best If</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Option A — Revenue Share</strong></td>
+          <td>10–15% of monthly revenue in exchange for social, digital, and promotional work. Grows with the business.</td>
+          <td>You're cash-light now but want aligned incentives. I grow when you grow.</td>
+        </tr>
+        <tr>
+          <td><strong>Option B — Retainer + Delivery Pay</strong></td>
+          <td>$500/mo retainer for social + digital management, plus $X per delivery day I join (gas + hourly).</td>
+          <td>You want clear, predictable costs and a structured arrangement.</td>
+        </tr>
+        <tr>
+          <td><strong>Option C — Equity / Co-Founder</strong></td>
+          <td>Negotiate a small equity stake (5–15%) in exchange for ongoing digital, marketing, and operational contribution.</td>
+          <td>You want a long-term partner invested in the business, not a contractor.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="highlight">
+    <p><strong>My recommendation:</strong> Start with Option A (revenue share) for the first 90 days. It aligns both of our incentives — my compensation scales with results. If we're building real value together, we revisit equity (Option C) at the 6-month mark.</p>
+  </div>
+
+  <h3 class="section-head">Scaling Opportunities I Can Help Execute</h3>
+
+  <div class="card-grid cols-2">
+    <div class="card">
+      <div class="card-title">B2B Sales Outreach</div>
+      <p class="card-desc">I can personally visit gyms, yoga studios, barbershops, and small offices in our delivery radius — a walk-in pitch with a free sample jug. Low cost, high conversion. One B2B account can be worth $100–200/month.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Community Event Presence</div>
+      <p class="card-desc">Represent Savior Spring at DMV health expos, farmers markets, and community events. Sampling is the #1 conversion tool in food and beverage. I can coordinate, set up, and work these events.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Influencer & Creator Partnerships</div>
+      <p class="card-desc">Identify and reach out to 10–20 DMV-based fitness, health, and lifestyle micro-influencers (5k–50k followers) for gifted partnerships. One viral Reel from the right creator can bring 50+ subscribers overnight.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Wholesale / Retail Expansion</div>
+      <p class="card-desc">In Year 2, pitch local health food stores, DMV-based co-ops, and boutique grocers as a secondary distribution channel. Label design, pitch deck, pricing structure — I can help build all of it.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="card card-dark" style="text-align:center; padding:3rem;">
+    <div style="font-size:2rem;margin-bottom:1rem;">💧</div>
+    <div class="card-title" style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;margin-bottom:0.5rem;color:white;">Ready to Build Something Real</div>
+    <p class="card-desc" style="max-width:500px;margin:0 auto;font-size:0.95rem;">You have the water, the story, and the hustle. What's missing is the infrastructure and the team to scale it. Let's build Savior Spring Water into the DMV's defining local water brand — together.</p>
+  </div>
+
+</div>
+</body>
+</html>
